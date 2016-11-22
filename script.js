@@ -1,3 +1,6 @@
+var questionsAmount = +prompt ("Введите количество вопросов в тесте", "");
+var answersAmount = +prompt ("Введите количество вариантов ответов для каждого вопроса", "");
+
 var pTest = {
 
     createWrapper  : function (){
@@ -16,13 +19,13 @@ var pTest = {
     },
 
     fillListQuestions: function () {
-        for (i=1; i<=3; i++){
+        for (i=1; i<=questionsAmount; i++){
             var question = document.createElement('p');
             question.innerHTML = i+ '. ' +'Вопрос № '+ i;
             var parent = document.querySelector ('.list');
             parent.appendChild(question);
 
-            for(j=1; j<=3; j++) {
+            for(j=1; j<=answersAmount; j++) {
                 var answer = document.createElement('p');
                 question.appendChild(answer);
                 var label = document.createElement('label');
